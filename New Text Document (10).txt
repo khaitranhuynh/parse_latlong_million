@@ -1,0 +1,44 @@
+## install thu vien geopy trong conda: pip install geopy
+
+from geopy.geocoders import GoogleV3 -- acc free convert 3k 1 ngay ??
+
+
+# catch loi cua cac field khong dung dinh dang 
+Polygon Data (GeoDataFrame)
+data_poly = gpd.read_file("data.geojson")
+# Readonly the required columns 
+# Drop NAN
+
+Location Data (GeoDataFrame)
+bus = pd.read_Csv(neighbor.csv)
+
+#convert dataframe to geodatframe
+gdf = geopandas.GeoDataFrame(
+    bus, geometry=geopandas.points_from_xy(bus.stop_location_longitiude, bus.stop_location_latitiude))
+
+#Output
+joined_gdf = gpd.sjoin(gdf, data_poly, op='within')
+
+Location Data (GeoDataFrame)
+bus = pd.read_Csv(busstop.csv)
+
+worksheet = workbook.sheet_by_name('busstop.csv')
+num_rows = worksheet.nrows - 1
+curr_row = 0
+while curr_row < num_rows:
+        curr_row += 1
+        row = worksheet.row(curr_row)
+	#convert dataframe to geodatframe
+	gdf = geopandas.GeoDataFrame(
+    		bus, geometry=geopandas.points_from_xy(bus.stop_location_longitiude, bus.stop_location_latitiude))
+
+	#Output
+	joined_gdf = gpd.sjoin(gdf, data_poly, op='within')
+
+	geolocator = GoogleV3()
+	location = geolocator.reverse(bus.stop_location_longitiude, bus.stop_location_latitiude)	
+	print(location.address)
+	
+	# o tren chay 2 api check xem api nao tra dung
+
+
