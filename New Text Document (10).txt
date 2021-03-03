@@ -2,7 +2,7 @@
 
 from geopy.geocoders import GoogleV3 -- acc free convert 3k 1 ngay ??
 
-
+# =======================
 # catch loi cua cac field khong dung dinh dang 
 Polygon Data (GeoDataFrame)
 data_poly = gpd.read_file("data.geojson")
@@ -18,6 +18,7 @@ gdf = geopandas.GeoDataFrame(
 
 #Output
 joined_gdf = gpd.sjoin(gdf, data_poly, op='within')
+#============
 
 Location Data (GeoDataFrame)
 bus = pd.read_Csv(busstop.csv)
